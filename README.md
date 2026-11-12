@@ -58,7 +58,7 @@ python3 -m venv .venv && .venv/bin/pip install -e ".[test]"
 .venv/bin/python -m pytest -q            # 16 passed
 ```
 
-No runtime dependencies; Python ≥ 3.9 with `zoneinfo` (system tzdata).
+No runtime dependencies; Python ≥ 3.10 (`dataclass(slots=True)` + `zoneinfo`, system tzdata).
 
 ## CLI
 

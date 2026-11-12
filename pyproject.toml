@@ -7,7 +7,7 @@ name = "tzbreaks"
 version = "1.0.0"
 description = "Enumerate and classify time-zone gaps/overlaps; never silently guess a wall clock"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "linluozi"}]
 keywords = ["timezone", "dst", "zoneinfo", "scheduling", "calendar"]
