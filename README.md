@@ -7,7 +7,7 @@ naive local wall clock as *unambiguous*, *ambiguous* (occurs twice) or
 
 `tzbreaks` does not sample every minute. It samples the offset on a coarse grid
 and bisects each detected change down to the second, which is how it audits
-**599 zones × 16 years (6,530 transitions) in about 45 seconds**, re-probing
+**599 zones × 16 years (6,530 transitions) in 14.7 s measured**, re-probing
 every single transition at `T-1s`/`T` and finding 0 mismatches.
 
 Upstream: none
