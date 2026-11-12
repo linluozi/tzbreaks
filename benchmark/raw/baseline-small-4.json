@@ -1,0 +1,15 @@
+{
+  "impl": "baseline",
+  "scale": "small",
+  "sample": 4,
+  "seconds": 0.2444433243945241,
+  "zones": [
+    "America/New_York"
+  ],
+  "start": "2024-03-01T00:00:00+00:00",
+  "end": "2024-08-28T00:00:00+00:00",
+  "breaks": 1,
+  "python": "3.12.3",
+  "seed": 20241113,
+  "step_seconds": 21600
+}

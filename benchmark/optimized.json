@@ -1,0 +1,92 @@
+{
+  "env": {
+    "cpu_model": "AMD EPYC 7K62 48-Core Processor",
+    "cpu_threads": "4",
+    "mem_total": "3812564 kB",
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "seed": 20241113,
+    "timer": "time.perf_counter",
+    "grid": 21600.0
+  },
+  "step_seconds": 21600,
+  "warmup": 3,
+  "repeat": 5,
+  "command": "python benchmark/bench.py --impl optimized",
+  "note": "measured in the same process as the other arm (benchmark/both.json)",
+  "scales": {
+    "small": {
+      "zones": 1,
+      "days": 180,
+      "breaks": 1,
+      "equivalent_to_baseline": true,
+      "minutes_scanned": 259200,
+      "arm": {
+        "median_s": 0.0008001448586583138,
+        "p25_s": 0.0007945634424686432,
+        "p75_s": 0.0008016573265194893,
+        "min_s": 0.0007893536239862442,
+        "max_s": 0.0008017579093575478,
+        "rsd_pct": 0.5806785656359994,
+        "samples_s": [
+          0.0008001448586583138,
+          0.0008015567436814308,
+          0.0007997732609510422,
+          0.0007893536239862442,
+          0.0008017579093575478
+        ]
+      },
+      "speedup_vs_baseline": 308.17763740631716
+    },
+    "medium": {
+      "zones": 2,
+      "days": 180,
+      "breaks": 2,
+      "equivalent_to_baseline": true,
+      "minutes_scanned": 518400,
+      "arm": {
+        "median_s": 0.0016080914065241814,
+        "p25_s": 0.0015793843194842339,
+        "p75_s": 0.0016283863224089146,
+        "min_s": 0.0015683388337492943,
+        "max_s": 0.0016364268958568573,
+        "rsd_pct": 1.4685940609336146,
+        "samples_s": [
+          0.0015904298052191734,
+          0.0015683388337492943,
+          0.0016364268958568573,
+          0.0016080914065241814,
+          0.0016203457489609718
+        ]
+      },
+      "speedup_vs_baseline": 309.76040192856215
+    },
+    "large": {
+      "zones": 4,
+      "days": 180,
+      "breaks": 3,
+      "equivalent_to_baseline": true,
+      "minutes_scanned": 1036800,
+      "arm": {
+        "median_s": 0.003142396919429302,
+        "p25_s": 0.0030799605883657932,
+        "p75_s": 0.0031669684685766697,
+        "min_s": 0.003040687181055546,
+        "max_s": 0.003184305503964424,
+        "rsd_pct": 1.5290248742278525,
+        "samples_s": [
+          0.003040687181055546,
+          0.0031192339956760406,
+          0.003142396919429302,
+          0.003184305503964424,
+          0.0031496314331889153
+        ]
+      },
+      "speedup_vs_baseline": 309.23302292180813
+    }
+  },
+  "peak_traced_bytes_large": 802,
+  "pytest": [
+    "................                                                         [100%]"
+  ]
+}

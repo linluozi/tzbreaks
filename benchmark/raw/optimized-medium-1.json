@@ -1,0 +1,16 @@
+{
+  "impl": "optimized",
+  "scale": "medium",
+  "sample": 1,
+  "seconds": 0.0015683388337492943,
+  "zones": [
+    "America/New_York",
+    "Europe/Berlin"
+  ],
+  "start": "2024-03-01T00:00:00+00:00",
+  "end": "2024-08-28T00:00:00+00:00",
+  "breaks": 2,
+  "python": "3.12.3",
+  "seed": 20241113,
+  "step_seconds": 21600
+}
