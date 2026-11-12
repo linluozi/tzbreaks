@@ -99,13 +99,21 @@ def breaks(
     zone: str,
     start: datetime,
     end: datetime,
+    step: timedelta = timedelta(hours=6),
 ) -> list[Break]:
     """Return all offset discontinuities in ``[start, end]``.
 
-    The scan samples the offset once per minute and refines every detected
-    change by second-precision bisection.
+    The scan samples the offset on a coarse grid and refines every detected
+    change by second-precision bisection. ``step`` bounds the grid: a pair of
+    transitions that both fall inside one grid cell *and* restore the original
+    offset would be invisible to it, so ``step`` is a coverage parameter, not a
+    formality. See docs/algorithm.md and the equivalence evidence in README.
     """
     _check_range(start, end)
+    if step <= timedelta(0):
+        raise ValueError("step must be positive")
+    if step > timedelta(days=30):
+        raise ValueError("step must be at most 30 days")
     tz = ZoneInfo(zone)
     out: list[Break] = []
     cursor = start
@@ -115,7 +123,7 @@ def breaks(
         guard += 1
         if guard > 5_000_000:
             raise RuntimeError("scan guard tripped; step too small for the range")
-        nxt = min(cursor + timedelta(minutes=1), end)
+        nxt = min(cursor + step, end)
         off = _offset(tz, nxt)
         if off == prev_off:
             cursor, prev_off = nxt, off
