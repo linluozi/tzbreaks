@@ -54,7 +54,7 @@ DST shift, Kathmandu's 15-minute 1986 jump, and Samoa's skipped calendar day
 ## Install
 
 ```bash
-python3 -m venv .venv && .venv/bin/pip install -e .
+python3 -m venv .venv && .venv/bin/pip install -e ".[test]"
 .venv/bin/python -m pytest -q            # 16 passed
 ```
 
